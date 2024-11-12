@@ -123,21 +123,11 @@
   .modal__form-item {
   }
   .modal__form-btn {
-    min-height: 50px;
-    width: 100%;
-    padding: 5px;
-    background-color: #a01cad;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-
-    color: white;
-    font-weight: 700;
-    font-size: 16px;
-    text-transform: uppercase;
-    text-align: center;
+    &::after {
+      // transform: rotate(80deg);
+      height: 300px;
+      animation: tickerButtonModal 4s linear infinite;
+    }
   }
   .modal__form-policy {
     display: flex;
@@ -155,5 +145,17 @@
         text-decoration: underline;
       }
     }
+  }
+}
+
+@keyframes tickerButtonModal {
+  0% {
+    left: -200px;
+  }
+  20% {
+    left: 450px;
+  }
+  100% {
+    left: 450px;
   }
 }

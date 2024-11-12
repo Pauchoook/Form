@@ -13,24 +13,29 @@
 }
 
 .btn-main {
+  @include flex-center;
   position: relative;
   overflow: hidden;
-  max-width: 220px;
-  min-height: 50px;
-  width: 100%;
-  padding: 5px;
-  background-color: #A01CAD;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem 1.6rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.4);
+  border-radius: 100rem;
 
   color: white;
-  font-weight: 700;
+  background: linear-gradient(to right bottom, hsl(236, 50%, 50%), hsl(195, 50%, 50%));
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: 0.2rem;
+
+  transition: 0.2s;
+  cursor: pointer;
   font-size: 16px;
-  text-transform: uppercase;
-  text-align: center;
   z-index: 1;
+  &:hover,
+  &:focus {
+    border-color: hsla(0, 0%, 100%, 0.6);
+    transform: translateY(-0.2rem);
+  }
+
   &::after {
     position: absolute;
     content: "";
@@ -38,7 +43,7 @@
     width: 20px;
     height: 160px;
     transform: rotate(62deg);
-    animation: tickerButton 4s linear infinite;
+    animation: tickerButton 3s linear infinite;
     z-index: -1;
   }
 }
@@ -47,10 +52,10 @@
   0% {
     left: -200px;
   }
-  20% {
-    left: 350px;
+  50% {
+    left: 450px;
   }
   100% {
-    left: 350px;
+    left: 450px;
   }
 }

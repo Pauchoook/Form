@@ -38,23 +38,29 @@ body {
   min-height: 100vh
 }
 .btn-main {
-  position: relative;
-  overflow: hidden;
-  max-width: 220px;
-  min-height: 50px;
-  width: 100%;
-  padding: 5px;
-  background-color: #a01cad;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 1.6rem;
+  border: 1px solid hsla(0,0%,100%,.4);
+  border-radius: 100rem;
   color: #fff;
-  font-weight: 700;
+  background: linear-gradient(to right bottom,#3f48bf,#3f9fbf);
+  font-size: 1.4rem;
+  font-family: inherit;
+  letter-spacing: .2rem;
+  transition: .2s;
+  cursor: pointer;
   font-size: 16px;
-  text-transform: uppercase;
-  text-align: center;
   z-index: 1
+}
+.btn-main:focus,
+.btn-main:hover {
+  border-color: hsla(0,0%,100%,.6);
+  -webkit-transform: translateY(-.2rem);
+  transform: translateY(-.2rem)
 }
 .btn-main::after {
   position: absolute;
@@ -64,30 +70,30 @@ body {
   height: 160px;
   -webkit-transform: rotate(62deg);
   transform: rotate(62deg);
-  -webkit-animation: tickerButton 4s linear infinite;
-  animation: tickerButton 4s linear infinite;
+  -webkit-animation: tickerButton 3s linear infinite;
+  animation: tickerButton 3s linear infinite;
   z-index: -1
 }
 @-webkit-keyframes tickerButton {
   0% {
     left: -200px
   }
-  20% {
-    left: 350px
+  50% {
+    left: 450px
   }
   100% {
-    left: 350px
+    left: 450px
   }
 }
 @keyframes tickerButton {
   0% {
     left: -200px
   }
-  20% {
-    left: 350px
+  50% {
+    left: 450px
   }
   100% {
-    left: 350px
+    left: 450px
   }
 }
 .list {
@@ -206,21 +212,10 @@ body {
   flex-direction: column;
   gap: 15px
 }
-.modal .modal__form-btn {
-  min-height: 50px;
-  width: 100%;
-  padding: 5px;
-  background-color: #a01cad;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
-  text-align: center
+.modal .modal__form-btn::after {
+  height: 300px;
+  -webkit-animation: tickerButtonModal 4s linear infinite;
+  animation: tickerButtonModal 4s linear infinite
 }
 .modal .modal__form-policy {
   display: flex;
@@ -235,6 +230,28 @@ body {
 }
 .modal .modal__policy-label a {
   color: #454945
+}
+@-webkit-keyframes tickerButtonModal {
+  0% {
+    left: -200px
+  }
+  20% {
+    left: 450px
+  }
+  100% {
+    left: 450px
+  }
+}
+@keyframes tickerButtonModal {
+  0% {
+    left: -200px
+  }
+  20% {
+    left: 450px
+  }
+  100% {
+    left: 450px
+  }
 }
 .input {
   border: 1px solid rgba(22,27,23,.1);
